@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CalcolatriceBRUT"
+             x:Class="CalcolatriceBRUT.MainPage"
+             BackgroundColor="#404040">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="OrangeButtonNumber" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#e67300"/>
+                <Setter Property="BorderRadius" Value="0"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="Margin" Value="0"/>
+            </Style>
+            
+            <Style x:Key="OrangeButtonOperator" TargetType="Button" BasedOn="{StaticResource OrangeButtonNumber}">
+                <Setter Property="BackgroundColor" Value="DarkOrange"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid RowSpacing="1" ColumnSpacing="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor="DarkOrange" 
+               Text="CalculetorBRUT" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+               FontSize="Large" FontFamily="Droid Sans Mono" TextColor="Black"/>
+        <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" BackgroundColor="Black"  
+               HorizontalTextAlignment="End" VerticalTextAlignment="End"
+               Text="0" TextColor="White" FontSize="40"
+               x:Name="Result" />
+
+
+        <Button Grid.Column="0" Grid.Row="2" Style="{StaticResource OrangeButtonOperator}" Text="C"  x:Name="BC" Clicked="BC_Clicked"/>
+        <Button Grid.Column="1" Grid.Row="2" Style="{StaticResource OrangeButtonOperator}" Text="⤍" x:Name="BCAN" Clicked="BCAN_Clicked"/>
+        <Button Grid.Column="2" Grid.Row="2" Style="{StaticResource OrangeButtonOperator}" Text="%"  x:Name="BPER" Clicked="BPER_Clicked"/>
+        <Button Grid.Column="3" Grid.Row="2" Style="{StaticResource OrangeButtonOperator}" Text="/"  x:Name="BDIV" Clicked="BDIV_Clicked"/>
+                                             
+        <Button Grid.Column="0" Grid.Row="3" Style="{StaticResource OrangeButtonOperator}" Text="7" x:Name="B7" Clicked="B7_Clicked"/>
+        <Button Grid.Column="1" Grid.Row="3" Style="{StaticResource OrangeButtonOperator}" Text="8" x:Name="B8" Clicked="B8_Clicked"/>
+        <Button Grid.Column="2" Grid.Row="3" Style="{StaticResource OrangeButtonOperator}" Text="9" x:Name="B9" Clicked="B9_Clicked"/>
+        <Button Grid.Column="3" Grid.Row="3" Style="{StaticResource OrangeButtonOperator}" Text="*" x:Name="BPE" Clicked="BPE_Clicked"/>
+                                             
+        <Button Grid.Column="0" Grid.Row="4" Style="{StaticResource OrangeButtonOperator}" Text="4" x:Name="B4" Clicked="B4_Clicked"/>
+        <Button Grid.Column="1" Grid.Row="4" Style="{StaticResource OrangeButtonOperator}" Text="5" x:Name="B5" Clicked="B5_Clicked"/>
+        <Button Grid.Column="2" Grid.Row="4" Style="{StaticResource OrangeButtonOperator}" Text="6" x:Name="B6" Clicked="B6_Clicked"/>
+        <Button Grid.Column="3" Grid.Row="4" Style="{StaticResource OrangeButtonOperator}" Text="-" x:Name="BME" Clicked="BME_Clicked"/>
+                                          
+        <Button Grid.Column="0" Grid.Row="5" Style="{StaticResource OrangeButtonOperator}" Text="1" x:Name="B1" Clicked="B1_Clicked"/>
+        <Button Grid.Column="1" Grid.Row="5" Style="{StaticResource OrangeButtonOperator}" Text="2" x:Name="B2" Clicked="B2_Clicked"/>
+        <Button Grid.Column="2" Grid.Row="5" Style="{StaticResource OrangeButtonOperator}" Text="3" x:Name="B3" Clicked="B3_Clicked"/>
+        <Button Grid.Column="3" Grid.Row="5" Style="{StaticResource OrangeButtonOperator}" Text="+" x:Name="BPI" Clicked="BPI_Clicked"/>
+
+
+
+        <Button Grid.Column="0" Grid.Row="6"  Grid.ColumnSpan="2" Text="0" Style="{StaticResource OrangeButtonNumber}"  x:Name="B0" Clicked="B0_Clicked"/>
+        <Button Grid.Column="2" Grid.Row="6"  Text="." Style="{StaticResource OrangeButtonNumber}" x:Name="BVIR" Clicked="BVIR_Clicked"/>
+        <Button Grid.Column="3" Grid.Row="6"  Text="=" Style="{StaticResource OrangeButtonOperator}" x:Name="BUQ" Clicked="BUQ_Clicked"/>
+
+
+
+    </Grid>
+
+</ContentPage>
